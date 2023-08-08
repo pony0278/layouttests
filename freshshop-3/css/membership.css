@@ -67,4 +67,6 @@
   .form-select option:checked {
     color: black;
   }
-
+  .kv-ltr-theme-fas-star {
+    display: none;
+  }

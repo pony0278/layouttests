@@ -22,9 +22,14 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/css/star-rating.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-fas/theme.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="css/membership.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Responsive CSS -->
@@ -32,7 +37,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/forNews.css">
-    <link rel="stylesheet" href="css/membership.css">
+
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -122,10 +127,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>最新消息</h2>
+                    <h2>會員中心</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">首頁</a></li>
-                        <li class="breadcrumb-item active">最新消息</li>
+                        <li class="breadcrumb-item active">會員中心</li>
                     </ul>
                 </div>
             </div>
@@ -148,6 +153,10 @@
             <li class="nav-item" role="presentation">
                 <a class="nav-link" id="return-tab" data-bs-toggle="tab" href="#return" role="tab"
                     aria-selected="false">退貨紀錄</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="booking-tab" data-bs-toggle="tab" href="#booking" role="tab"
+                    aria-selected="false">預約紀錄</a>
             </li>
         </ul>
 
@@ -215,6 +224,11 @@
                                                                         data-bs-target="#addressModal">
                                                                         查看已儲存地址
                                                                     </button>
+                                                                    <button type="button" class="btn add-address"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#NewAddressModal">
+                                                                        新增地址
+                                                                    </button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -253,6 +267,31 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="modal fade" id="NewAddressModal" tabindex="-1"
+                                aria-labelledby="NewAddressModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="addressModalLabel">新增地址</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="col-md-9">
+                                                <ol>
+                                                    <li><input type="text" value="" placeholder="填入地址"></li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">關閉</button>
+                                            <button type="button" class="btn btn-primary">儲存</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- cart -->
                             <!-- summary -->
                             <div class="col-lg-3 order-1 order-sm-1 order-md-1 order-xs-1">
@@ -410,6 +449,146 @@
                         </div>
                 </section>
             </div>
+            <div class="modal fade" id="returnModal">
+                <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="col d-flex justify-content-end">
+                                <button type="button" class="btn btn-warning btn-sm px-2" data-bs-dismiss="modal">X
+                                </button>
+                            </div>
+                            <div class="container">
+                                <form action="">
+                                    <div class="row my-1 ml-2">
+                                        <label>訂單編號: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>成立日期: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>產品名稱: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>產品規格: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>訂購數量: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>消費金額: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>配送完成日期: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <div class="d-flex">
+                                            <label>退換貨數量: </label>
+                                            <input class="col-md-4" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <div class="d-flex">
+                                            <label>退換貨理由: </label>
+                                            <select class="form-md-select" aria-label="Default select example">
+                                                <option selected>太貴</option>
+                                                <option value="1">太難用</option>
+                                                <option value="2">不符合需求</option>
+                                                <option value="3">就想退</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>備註(非必填): </label>
+                                    </div>
+                                    <textarea class="form-control" placeholder="內容" rows="4"></textarea>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col mt-2">
+                                                <button type="button" class="btn btn-danger btn-block">申請退換貨</button>
+                                            </div>
+                                            <div class="col mt-2">
+                                                <button type="button" class="btn btn-outline-secondary btn-block"
+                                                    data-bs-dismiss="modal">取消</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="commentModal">
+                <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="col d-flex justify-content-end">
+                                <button type="button" class="btn btn-warning btn-sm px-2" data-bs-dismiss="modal">X
+                                </button>
+                            </div>
+                            <div class="container">
+                                <form action="">
+                                    <div class="row my-1 ml-2">
+                                        <label>訂單編號: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>成立日期: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>產品名稱: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>產品規格: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>訂購數量: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>消費金額: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>配送完成日期: </label>
+                                    </div>
+                                    <div class="row my-1 ml-2 align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <label>評價: </label>
+                                            <input name="input-1-ltr-star-xs" class="kv-ltr-theme-fas-star" value="5"
+                                                dir="ltr" data-size="md" data-show-clear="false"
+                                                data-show-caption="false">
+                                        </div>
+                                    </div>
+                                    <div class="row my-1 ml-2">
+                                        <label>評論: </label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col mt-2">
+                                                <button type="button" class="btn btn-danger btn-block">送出</button>
+                                            </div>
+                                            <div class="col mt-2">
+                                                <button type="button" class="btn btn-outline-secondary btn-block"
+                                                    data-bs-dismiss="modal">取消</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="tab-pane fade" id="return" role="tabpanel" aria-labelledby="return-tab">
                 <section class="my-5">
                     <div class="container">
@@ -491,9 +670,95 @@
                         </div>
                 </section>
             </div>
-        </div>
-    </div>
+            <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
+                <section class="my-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 order-2 order-sm-2 order-md-2 order-xs-2">
+                                <div class="card mb-3 border shadow-0">
+                                    <form>
+                                        <div class="col">
+                                            <label>選擇日期區間</label>
+                                            <input class="dateRange form-control" type="text" />
+                                            <label>關鍵字搜尋</label>
+                                            <input class="form-control" type="text" value=""
+                                                placeholder="請輸入關鍵字或訂單編號" />
+                                            <div class="text-center mb-2 ">
+                                                <button class="btn-customs btn hvr-hovers ">
+                                                    查詢
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 order-3 order-sm-3 order-md-3 order-xs-3">
+                                <div class="row gy-3 mb-4">
+                                    <div style="height: 350px; overflow: scroll;" class="table-responsive">
+                                        <table class="table table-bordered table-hover ">
+                                            <thead class="table-warning text-center">
+                                                <tr>
+                                                    <th scope="col">訂單編號</th>
+                                                    <th scope="col">預約時間</th>
+                                                    <th scope="col">服務數量</th>
+                                                    <th scope="col">服務費用</th>
+                                                    <th scope="col">服務狀態</th>
+                                                    <th scope="col">完成時間</th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-left">
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>2023/07/26</td>
+                                                    <td>1</td>
+                                                    <td>1000</td>
+                                                    <td>完成</td>
+                                                    <td>2023/07/27 12:00</td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <button type="button" class="btn btn-outline-dark mb-2 btn-sm">取消預約</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>2023/07/26</td>
+                                                    <td>1</td>
+                                                    <td>1000</td>
+                                                    <td>完成</td>
+                                                    <td>2023/07/27 12:00</td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <button type="button" class="btn btn-outline-dark mb-2 btn-sm">取消預約</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>2023/07/26</td>
+                                                    <td>1</td>
+                                                    <td>1000</td>
+                                                    <td>完成</td>
+                                                    <td>2023/07/27 12:00</td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <button type="button" class="btn btn-outline-dark mb-2 btn-sm">取消預約</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+            </div>
 
+        </div>
+
+    </div>
     <!-- 結束公告頁 -->
     <!-- Start Footer  -->
     <footer>
@@ -595,7 +860,11 @@
 
     <!-- ALL JS FILES -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/js/star-rating.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-star-rating@4.1.2/js/star-rating.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-fas/theme.js"></script>
+    <script src="js/membership.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
