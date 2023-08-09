@@ -158,6 +158,18 @@
                 <a class="nav-link" id="booking-tab" data-bs-toggle="tab" href="#booking" role="tab"
                     aria-selected="false">預約紀錄</a>
             </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="collect-tab" data-bs-toggle="tab" href="#collect" role="tab"
+                    aria-selected="false">收藏紀錄</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="Complaint-tab" data-bs-toggle="tab" href="#Complaint" role="tab"
+                    aria-selected="false">客訴紀錄</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="CustomerService-tab" data-bs-toggle="tab" href="#CustomerService" role="tab"
+                    aria-selected="false">客服中心</a>
+            </li>
         </ul>
 
         <div class="tab-content" id="myTabContent">
@@ -306,7 +318,8 @@
                                             <span>您目前持有點數：9點</span><span>/1元</span>
                                         </div>
                                         <div class="text-center ">
-                                            <button class="btn-customs btn hvr-hovers ">
+                                            <button class="btn-customs btn hvr-hovers " data-bs-toggle="modal"
+                                                data-bs-target="#couponModal">
                                                 查看持有優惠券
                                             </button>
                                         </div>
@@ -318,6 +331,57 @@
                     </div>
                 </section>
             </div>
+            <div class="modal fade" id="couponModal">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3>我的優惠券</h3>
+                                    </div>
+                                    <div class="col d-flex justify-content-end">
+                                        <button type="button" class="btn btn-warning btn-sm" data-bs-dismiss="modal"> X
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-condensed">
+                                <thead class="table-warning">
+                                    <tr>
+                                        <th>優惠名稱</th>
+                                        <th>適用範圍</th>
+                                        <th>使用期限</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>全站$299起免運券</td>
+                                        <td>本運費抵用券僅適用於全站有開啟四大超商超運費折抵</td>
+                                        <td>2023-8-8 00:00~2023-8-8 24:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>全站$299起免運券</td>
+                                        <td>本運費抵用券僅適用於全站有開啟四大超商超運費折抵</td>
+                                        <td>2023-8-8 00:00~2023-8-8 24:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>全站$299起免運券</td>
+                                        <td>本運費抵用券僅適用於全站有開啟四大超商超運費折抵</td>
+                                        <td>2023-8-8 00:00~2023-8-8 24:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="tab-pane fade" id="shoppingsheet" role="tabpanel" aria-labelledby="shoppingsheet-tab">
                 <section class="my-5">
                     <div class="container">
@@ -717,7 +781,8 @@
                                                     <td>2023/07/27 12:00</td>
                                                     <td>
                                                         <div class="d-flex flex-column">
-                                                            <button type="button" class="btn btn-outline-dark mb-2 btn-sm">取消預約</button>
+                                                            <button type="button"
+                                                                class="btn btn-outline-dark mb-2 btn-sm">取消預約</button>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -730,7 +795,8 @@
                                                     <td>2023/07/27 12:00</td>
                                                     <td>
                                                         <div class="d-flex flex-column">
-                                                            <button type="button" class="btn btn-outline-dark mb-2 btn-sm">取消預約</button>
+                                                            <button type="button"
+                                                                class="btn btn-outline-dark mb-2 btn-sm">取消預約</button>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -743,7 +809,8 @@
                                                     <td>2023/07/27 12:00</td>
                                                     <td>
                                                         <div class="d-flex flex-column">
-                                                            <button type="button" class="btn btn-outline-dark mb-2 btn-sm">取消預約</button>
+                                                            <button type="button"
+                                                                class="btn btn-outline-dark mb-2 btn-sm">取消預約</button>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -755,10 +822,333 @@
                         </div>
                 </section>
             </div>
+            <div class="tab-pane fade" id="collect" role="tabpanel" aria-labelledby="collect-tab">
+                <section class="my-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="table-main">
+                                <table class="table table-rwd">
 
+                                    <thead>
+                                        <tr class="tr-only-hide">
+                                            <th>圖片</th>
+                                            <th>產品名稱</th>
+                                            <th>售價</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <!-- start prod1 -->
+                                    <tr>
+                                        <td>
+
+                                            <a href="#">
+                                                <img class="thumbnail-img img-fluid" src="images/prod-eg-1.png"
+                                                    alt="" />
+                                            </a>
+                                            <div class="remove-pr-rwd">
+                                                <a href="#">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="name-pr">
+                                            <a href="http://127.0.0.1:5500/shop-detail.html">
+                                                喵洽普 | 貓咪營養肉泥
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <span class="price-pr">$ 65</span>
+                                        </td>
+                                        <td>
+                                            <span class="quantity-box">剩餘x件</span>
+
+                                            <span class="add-pr">
+                                                <a class="btn hvr-hover" href="#"><i
+                                                        class="fa-solid fa-cart-plus"></i></a>
+                                            </span>
+                                            <span class="remove-pr">
+                                                <a href="#">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                            </span>
+
+                                        </td>
+                                    </tr>
+                                    <!-- end prod1 -->
+                                    <!-- start prod2 -->
+
+                                    <tr>
+                                        <td>
+
+                                            <a href="#">
+                                                <img class="thumbnail-img img-fluid" src="images/prod-eg-4.png"
+                                                    alt="" />
+                                            </a>
+                                            <div class="remove-pr-rwd">
+                                                <a href="#">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="name-pr">
+                                            <a href="http://127.0.0.1:5500/shop-detail.html">
+                                                貓抓嚴選｜Solo Toy：呆呆動物園
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <span class="price-pr">$ 30<del>$ 50</del>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="quantity-box">剩餘x件</span>
+
+                                            <span class="add-pr">
+                                                <a class="btn hvr-hover" href="#"><i
+                                                        class="fa-solid fa-cart-plus"></i></a>
+                                            </span>
+                                            <span class="remove-pr">
+                                                <a href="#">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                            </span>
+
+                                        </td>
+                                    </tr>
+                                    <!-- end prod2 -->
+                                    <!-- start prod3 -->
+
+                                    <tr>
+                                        <td>
+
+                                            <a href="#">
+                                                <img class="thumbnail-img img-fluid" src="images/prod-eg-3.png"
+                                                    alt="" />
+                                            </a>
+                                            <div class="remove-pr-rwd">
+                                                <a href="#">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="name-pr">
+                                            <a href="http://127.0.0.1:5500/shop-detail.html">
+                                                Pet Candy｜手工貓草玩具
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <span class="price-pr">$ 240<del>$ 280</del></span>
+                                        </td>
+                                        <td>
+                                            <span class="quantity-box">剩餘x件</span>
+
+                                            <span class="add-pr">
+                                                <a class="btn hvr-hover" href="#"><i
+                                                        class="fa-solid fa-cart-plus"></i></a>
+                                            </span>
+                                            <span class="remove-pr">
+                                                <a href="#">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                            </span>
+
+                                        </td>
+                                    </tr>
+                                    <!-- end prod3 -->
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="tab-pane fade" id="Complaint" role="tabpanel" aria-labelledby="Complaint-tab">
+                <section class="my-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 order-2 order-sm-2 order-md-2 order-xs-2">
+                                <div class="card mb-3 border shadow-0">
+                                    <form>
+                                        <div class="col">
+                                            <label>選擇日期區間</label>
+                                            <input class="dateRange form-control" type="text" />
+                                            <label>關鍵字搜尋</label>
+                                            <input class="form-control" type="text" value=""
+                                                placeholder="請輸入關鍵字或訂單編號" />
+                                            <div class="text-center mb-2 ">
+                                                <button class="btn-customs btn hvr-hovers ">
+                                                    查詢
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 order-3 order-sm-3 order-md-3 order-xs-3">
+                                <div class="row gy-3 mb-4">
+                                    <div style="height: 350px; overflow: scroll;" class="table-responsive">
+                                        <table class="table table-bordered table-hover ">
+                                            <thead class="table-warning text-center">
+                                                <tr>
+                                                    <th scope="col">客訴編號</th>
+                                                    <th scope="col">客訴時間</th>
+                                                    <th scope="col">客訴類型</th>
+                                                    <th scope="col">客訴主旨</th>
+                                                    <th scope="col">客訴狀態</th>
+                                                    <th scope="col">完成時間</th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-left">
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>2023/07/26</td>
+                                                    <td>1</td>
+                                                    <td>1000</td>
+                                                    <td>完成</td>
+                                                    <td>2023/07/27 12:00</td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <button type="button"
+                                                                class="btn btn-outline-dark mb-2 btn-sm"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#ComplaintModal">客訴內容</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>2023/07/26</td>
+                                                    <td>1</td>
+                                                    <td>1000</td>
+                                                    <td>完成</td>
+                                                    <td>2023/07/27 12:00</td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <button type="button"
+                                                                class="btn btn-outline-dark mb-2 btn-sm"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#ComplaintModal">客訴內容</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>2023/07/26</td>
+                                                    <td>1</td>
+                                                    <td>1000</td>
+                                                    <td>完成</td>
+                                                    <td>2023/07/27 12:00</td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <button type="button"
+                                                                class="btn btn-outline-dark mb-2 btn-sm"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#ComplaintModal">客訴內容</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+            </div>
+            <div class="tab-pane fade" id="CustomerService" role="tabpanel" aria-labelledby="CustomerService-tab">
+                <section class="my-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>請選擇申訴類型</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="subject"
+                                        name="name" placeholder="標題" required
+                                        data-error="請輸入您的標題">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="message" placeholder="內容"
+                                        rows="4" data-error="請輸入您的內容" required></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="submit-button text-center">
+                                    <button class="btn hvr-hover" id="submit"
+                                        type="submit">送出訊息</button>
+                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-
     </div>
+
+    <div class="modal fade" id="ComplaintModal">
+        <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="col d-flex justify-content-end">
+                        <button type="button" class="btn btn-warning btn-sm px-2" data-bs-dismiss="modal">X
+                        </button>
+                    </div>
+                    <div class="container">
+                        <form action="">
+                            <div class="row my-1 ml-2">
+                                <label>客訴編號: </label>
+                            </div>
+                            <div class="row my-1 ml-2">
+                                <label>成立日期: </label>
+                            </div>
+                            <div class="row my-1 ml-2">
+                                <label>客訴類型: </label>
+                            </div>
+                            <div class="row my-1 ml-2">
+                                <label>客訴主旨: </label>
+                            </div>
+                            <div class="row my-1 ml-2">
+                                <label>客訴內文 </label>
+                                <div class="input-group">
+                                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                                </div>
+                            </div>
+                            <div class="row my-1 ml-2">
+                                <label>客服回覆 </label>
+                                <div class="input-group">
+                                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col mt-2">
+                                        <button type="button" class="btn btn-outline-secondary btn-block"
+                                            data-bs-dismiss="modal">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 結束公告頁 -->
     <!-- Start Footer  -->
     <footer>
@@ -829,7 +1219,8 @@
                             <h4>聯絡我們</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>地址: 106台北市大安區 <br>復興南路一段390號2樓
+                                    <p><i class="fas fa-map-marker-alt"></i>地址: 106台北市大安區
+                                        <br>復興南路一段390號2樓
                                     </p>
                                 </li>
                                 <li>
